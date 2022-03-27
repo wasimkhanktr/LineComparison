@@ -8,16 +8,20 @@ namespace LineComparison
 {
     internal class Program
     {
+        public static double calculate(int x1, int y1, int x2, int y2)
+        {
+            double length = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+            return length;
+        }
+
         static void Main(string[] args)
         {
-            int x1, x2, y1, y2;
-            x1 = Convert.ToInt32(Console.ReadLine());
-            y1 = Convert.ToInt32(Console.ReadLine());
-            x2 = Convert.ToInt32(Console.ReadLine());
-            y2 = Convert.ToInt32(Console.ReadLine());
-            double length = Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-            Console.WriteLine("Length of line is " + length);
-
+            double LineOneLength = calculate(1, 2, 1, 2);
+            double LineTwoLength = calculate(3, 4, 3, 5);
+            if (LineOneLength == LineTwoLength)
+                Console.WriteLine("Length of lines are equal");
+            else
+                Console.WriteLine("Length of lines are not equal");
         }
     }
 }
