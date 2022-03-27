@@ -16,12 +16,15 @@ namespace LineComparison
 
         static void Main(string[] args)
         {
-            double LineOneLength = calculate(1, 2, 1, 2);
-            double LineTwoLength = calculate(3, 4, 3, 5);
-            if (LineOneLength == LineTwoLength)
+            double LineOneLength = calculate(1, 2, 1, 3);
+            double LineTwoLength = calculate(3, 4, 3, 4);
+            int val = LineOneLength.CompareTo(LineTwoLength);
+            if (val == 0)
                 Console.WriteLine("Length of lines are equal");
+            else if (val > 0)
+                Console.WriteLine("Length of line 1 is greater than line 2");
             else
-                Console.WriteLine("Length of lines are not equal");
+                Console.WriteLine("Length of line 2 is greater than line 1");
         }
     }
 }
